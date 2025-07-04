@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dewangga - Design Partner</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Dynamic Sections -->
+  <div id="home" style="background-image: url('/assets/Hero\ Section.png');"></div>
+  <div id="about-container" style="background-color: white;"></div>
+  <div id="services" style="background-image: url('/assets/Services.png');"></div>
+
+  <!-- Script to load pages dynamically and their styles -->
+  <script>
+    function loadSection(url, targetId, styleHref) {
+      fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const section = doc.querySelector('section');
+          
+
+          if (section) {
+            document.getElementById(targetId).appendChild(section);
+
+            // Add stylesheet if not already loaded
+            if (styleHref && !document.querySelector(`link[href="${styleHref}"]`)) {
+              const link = document.createElement('link');
+              link.rel = 'stylesheet';
+              link.href = styleHref;
+              document.head.appendChild(link);
+            }
+          } else {
+            document.getElementById(targetId).innerHTML = `<p>Section not found in ${url}.</p>`;
+          }
+        })
+        .catch(error => {
+          document.getElementById(targetId).innerHTML = `<p>Gagal memuat konten dari ${url}.</p>`;
+          console.error(error);
+        });
+    }
+
+    // Load home.html with home.css
+    loadSection('pages/home.html', 'home', '/css/styles.css');
+    loadSection('pages/about.html', 'about-container', '/css/about.css');
+    loadSection('pages/services.html', 'services', '/css/services.css');
+  </script>
+</body>
+</html>
