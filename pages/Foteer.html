@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Sesuai Gambar</title>
+    
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Gaya dasar dari Anda */
+        body {
+            font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+
+        .site-footer {
+            background-color: #121212; 
+            color: #A0AEC0; 
+            padding: 80px 40px 40px;
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2; 
+        }
+
+        .background-text {
+            position: absolute;
+            bottom: -60px; 
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20vw; 
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.04); /* Putih dengan transparansi sangat tinggi */
+            z-index: 1;
+            user-select: none; /* Agar teks tidak bisa diseleksi */
+            pointer-events: none; /* Agar bisa diklik menembus teks */
+            white-space: nowrap;
+        }
+        
+        /* Bagian Atas Footer (Grid 3 Kolom) */
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr; /* Rasio lebar kolom */
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+        
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Kolom 1: Info Kontak */
+        .logo-circle {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #4A5568;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .contact-email {
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 500;
+            text-decoration: none;
+            margin-bottom: 16px;
+        }
+
+        .contact-details {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        .contact-details p {
+            margin: 0;
+            margin-bottom: 16px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 16px;
+            margin-top: 8px; /* Jarak dari teks telepon */
+        }
+        .social-icons a {
+            color: #A0AEC0;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #FFFFFF;
+        }
+        .social-icons svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Kolom 2: Navigasi Link */
+        .footer-nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Kolom 3: Call to Action (CTA) */
+        .footer-cta h3 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin: 0 0 16px 0;
+        }
+        .cta-button {
+            background-color: #FFFFFF;
+            color: #121212;
+            padding: 12px 24px;
+            border-radius: 99px; /* Membuat bentuk pil */
+            text-decoration: none;
+            font-weight: 500;
+            align-self: flex-start; /* Agar tombol tidak meregang penuh */
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #E5E7EB;
+        }
+
+        /* Garis Pemisah */
+        .footer-divider {
+            border: none;
+            height: 1px;
+            background-color: #374151; /* Abu-abu gelap */
+            margin: 0;
+        }
+
+        /* Bagian Bawah Footer */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 32px;
+            font-size: 14px;
+        }
+        .legal-links a {
+            color: #A0AEC0;
+            text-decoration: none;
+        }
+        .legal-links a:hover {
+            color: #FFFFFF;
+        }
+        .legal-links span {
+            margin: 0 10px;
+        }
+
+        /* Penyesuaian untuk layar kecil (Responsif) */
+        @media (max-width: 800px) {
+            .footer-top {
+                grid-template-columns: 1fr 1fr; /* Menjadi 2 kolom */
+                gap: 30px;
+            }
+            .footer-cta {
+                grid-column: 1 / -1; /* CTA mengambil lebar penuh di baris baru */
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-top {
+                grid-template-columns: 1fr; /* Menjadi 1 kolom */
+            }
+            .footer-bottom {
+                flex-direction: column; /* Menumpuk vertikal */
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div style="height: 50vh;"></div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="logo-circle">D</div>
+                    <a href="mailto:Info@Dewangga.com" class="contact-email">Info@Dewangga.com</a>
+                    <div class="contact-details">
+                        <p>2972 Westheimer Rd. Santa<br>Ana, Illinois 85486</p>
+                        <p>+64 123 123456</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.32 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 12 2.04Z"/></svg></a>
+                        <a href="#" aria-label="Twitter"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 2.9,4.79C2.53,5.42 2.33,6.15 2.33,6.94C2.33,8.43 3.11,9.75 4.26,10.54C3.54,10.51 2.87,10.31 2.3,10.01V10.06C2.3,12.25 3.84,14.07 5.91,14.49C5.55,14.59 5.17,14.63 4.77,14.63C4.5,14.63 4.23,14.61 3.98,14.56C4.54,16.36 6.14,17.64 8.04,17.68C6.54,18.88 4.67,19.61 2.63,19.61C2.28,19.61 1.93,19.59 1.58,19.54C3.46,20.78 5.69,21.5 8.12,21.5C16,21.5 20.33,14.97 20.33,9.25C20.33,9.05 20.33,8.85 20.32,8.65C21.16,8.05 21.88,7.32 22.46,6Z"/></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                        <a href="#" aria-label="Instagram"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column footer-nav">
+                    <a href="#">Linkedin</a>
+                    <a href="#">Upwork</a>
+                    <a href="#">Behance</a>
+                    <a href="#">Instagram</a>
+                </div>
+                <div class="footer-column footer-cta">
+                    <h3>Let's Work Together</h3>
+                    <a href="#" class="cta-button">See More</a>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 MyCrypto. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+          <div class="background-text">Dewangga</div>
+        </div>
+    </footer>
+</body>
+</html>
